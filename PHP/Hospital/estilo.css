@@ -30,7 +30,6 @@ h1 {
     cursor: pointer;
 }
 
-/* Gradiente de cores de vermelho a verde */
 .bloco-1 { background-color: #FF0000; }
 .bloco-2 { background-color: #FF3300; }
 .bloco-3 { background-color: #FF6600; }
@@ -46,20 +45,18 @@ h1 {
     opacity: 0.8;
 }
 
-/* Estilo das perguntas */
 .perguntas {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .pergunta {
-    font-size: 28px; /* Aumentar o tamanho da fonte */
-    font-weight: bold; /* Adicionar negrito */
+    font-size: 28px;
+    font-weight: bold; 
     margin-bottom: 10px;
     color: #333;
 }
 
-/* Estilização da área de texto */
 .textarea-container {
     margin-top: 20px;
 }
@@ -89,7 +86,6 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Estilo para a mensagem de anonimato */
 .anonimato-msg {
     margin-top: 10px;
     font-size: 14px;
