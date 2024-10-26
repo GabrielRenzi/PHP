@@ -1,8 +1,7 @@
 <?php
 session_start();
-require_once 'conexao.php'; // Conexão com o banco de dados
+require_once 'conexao.php';
 
-// Função para carregar a pergunta atual
 function carregarPerguntaAtual($pdo) {
     try {
         $stmt = $pdo->query("SELECT * FROM perguntas ORDER BY id ASC");
@@ -23,13 +22,11 @@ function carregarPerguntaAtual($pdo) {
     }
 }
 
-// Inicializar progresso na primeira execução
 if (!isset($_SESSION['progresso'])) {
     $_SESSION['progresso'] = 0;
     carregarPerguntaAtual($pdo);
 }
 
-// Salvar a resposta e avançar para a próxima pergunta, se houver
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $avaliacao = $_POST['avaliacao'];
     $reclamacaoSugestao = $_POST['reclamacaoSugestao'] ?? null;
@@ -46,11 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Erro ao salvar a resposta: " . $e->getMessage());
     }
 
-    // Avançar o progresso e carregar a próxima pergunta
     $_SESSION['progresso']++;
     carregarPerguntaAtual($pdo);
 }
 
-// Redirecionar para o formulário para exibir a próxima pergunta
 header('Location: index.php');
 exit();
