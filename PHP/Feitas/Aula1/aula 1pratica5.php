@@ -7,7 +7,7 @@
         ++$salario01;
         echo "Valor $salario01 <br>";
 
-        if ($x==49){
+        if ($x==50){
             break;
         }
     }

@@ -1,0 +1,144 @@
+
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+margin: 0;
+background-color: #f0f8ff;
+font-family: Arial, sans-serif;
+}
+
+.container {
+text-align: center;
+max-width: 700px;
+width: 90%;
+background-color: #ffffff;
+padding: 40px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+color: #333;
+font-size: 1.8rem;
+}
+
+.pergunta-container {
+margin-top: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.pergunta-texto {
+font-weight: bold;
+font-size: 1.5rem; /* Aumenta o tamanho da fonte */
+color: #333;
+margin-bottom: 20px;
+text-align: center;
+}
+
+.escala-avaliacao {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 10px;
+}
+
+.escala-item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: transform 0.2s, background-color 0.2s;
+    border: 2px solid transparent;
+}
+
+/* Destacar o item selecionado */
+.escala-item.selected {
+    border: 2px solid #000; /* Borda destacada para o item selecionado */
+    background-color: #FFD700; /* Cor de fundo dourada para o item selecionado */
+    color: #000; /* Cor do texto quando o item está selecionado */
+}
+
+.escala-item:hover {
+    transform: scale(1.1);
+}
+
+/* Ocultar o radio, mas manter o número visível */
+.escala-item input[type="radio"] {
+    display: none;
+}
+
+.escala-numero {
+    display: block;
+}
+
+.label-improvavel,
+.label-provavel {
+font-size: 0.9rem;
+color: #666;
+}
+
+.feedback-container {
+margin-top: 20px;
+text-align: left;
+width: 100%;
+}
+
+.feedback-container label {
+font-size: 1rem;
+color: #333;
+}
+
+.feedback-container textarea {
+width: 100%;
+padding: 10px;
+border-radius: 5px;
+border: 1px solid #ccc;
+resize: vertical;
+margin-top: 5px;
+}
+
+.mensagem-anonimato {
+font-size: 0.9rem;
+color: #666;
+margin-top: 15px;
+text-align: center;
+}
+
+.navigation-buttons {
+margin-top: 30px;
+display: flex;
+justify-content: space-between;
+}
+
+.btn-voltar,
+.btn-proxima,
+.btn-enviar {
+padding: 10px 20px;
+background-color: #4CAF50;
+color: #fff;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+cursor: pointer;
+border: none;
+transition: background-color 0.3s;
+}
+
+.btn-voltar:hover {
+background-color: #388E3C;
+}
+
+.btn-proxima:hover,
+.btn-enviar:hover {
+background-color: #45A049;
+}
