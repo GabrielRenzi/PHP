@@ -58,7 +58,7 @@ $perguntas = getPerguntas($conexao);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Dispositivos e Perguntas</title>
-    <link rel="stylesheet" href="estilos/cad.css">
+    <link rel="stylesheet" href="estilos/cada.css">
 </head>
 <body>
     <h2>Dispositivos Cadastrados</h2>

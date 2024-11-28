@@ -2,14 +2,12 @@
 session_start();
 include 'conexao.php';
 
-// Função para obter perguntas
 function getPerguntas($conexao) {
     $query = "SELECT * FROM pergunta WHERE status = 'ativa' ORDER BY pergunta_id";
     $result = pg_query($conexao, $query);
     return pg_fetch_all($result);
 }
 
-// Obter todas as perguntas
 $perguntas = getPerguntas($conexao);
 $index = isset($_GET['index']) ? (int)$_GET['index'] : 0;
 $totalPerguntas = count($perguntas);
@@ -19,7 +17,6 @@ if ($index >= $totalPerguntas) $index = $totalPerguntas - 1;
 
 $perguntaAtual = $perguntas[$index];
 
-// Salvar a resposta na sessão, se enviada
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pergunta_id = $perguntaAtual['pergunta_id'];
     $_SESSION['respostas'][$pergunta_id] = $_POST['respostas'][$pergunta_id];
@@ -49,11 +46,15 @@ function getColor($value) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliação de Serviços</title>
-    <link rel="stylesheet" href="estilos/ava.css">
+    <link rel="stylesheet" href="estilos/avali.css">
 </head>
 <body>
     <div class="container">
         <h2>Avaliação de Serviços</h2>
+
+        <div class="imagem-container">
+            <img src="imagens/logo.png" alt="Imagem Avaliação" class="imagem-avaliacao">
+        </div>
 
         <form action="avaliacao.php?index=<?php echo $index; ?>" method="post">
             <div class="pergunta-container">
@@ -75,7 +76,6 @@ function getColor($value) {
                 <textarea id="feedback_<?php echo $perguntaAtual['pergunta_id']; ?>" name="feedbacks[<?php echo $perguntaAtual['pergunta_id']; ?>]" rows="3"></textarea>
             </div>
 
-            <!-- Mensagem sobre anonimato abaixo do feedback -->
             <p class="mensagem-anonimato">Sua avaliação espontânea é anônima, nenhuma informação pessoal é solicitada ou armazenada.</p>
 
             <div class="navigation-buttons">
@@ -91,6 +91,6 @@ function getColor($value) {
             </div>
         </form>
     </div>
-    <script src="avaliacao.js"></script>
+    <script src="java/avaliacao.js"></script>
 </body>
 </html>

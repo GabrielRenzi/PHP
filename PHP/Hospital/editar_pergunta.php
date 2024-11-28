@@ -1,7 +1,6 @@
 <?php
 include 'conexao.php';
 
-// Verificar se o ID foi passado e obter os dados da pergunta
 if (isset($_GET['id'])) {
     $pergunta_id = $_GET['id'];
     $query = "SELECT * FROM pergunta WHERE pergunta_id = $1";
@@ -9,7 +8,6 @@ if (isset($_GET['id'])) {
     $pergunta = pg_fetch_assoc($result);
 }
 
-// Atualizar a pergunta no banco de dados
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $texto_pergunta = $_POST['texto_pergunta'];
     $status = $_POST['status'];

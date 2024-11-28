@@ -1,7 +1,6 @@
 <?php
 include 'conexao.php';
 
-// Verificar se o ID foi passado e obter os dados do dispositivo
 if (isset($_GET['id'])) {
     $dispositivo_id = $_GET['id'];
     $query = "SELECT * FROM dispositivo WHERE dispositivo_id = $1";
@@ -9,7 +8,6 @@ if (isset($_GET['id'])) {
     $dispositivo = pg_fetch_assoc($result);
 }
 
-// Atualizar o dispositivo no banco de dados
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome_dispositivo = $_POST['nome_dispositivo'];
     $status = $_POST['status'];

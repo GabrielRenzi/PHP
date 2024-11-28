@@ -20,7 +20,7 @@ include 'conexao.php';
             <a href="configuracao.php" class="dashboard-button">Iniciar Avaliações</a>
             <a href="cadastro.php" class="dashboard-button">Cadastro de Dispositivos e Perguntas</a>
             <a href="visualizar_avaliacoes.php" class="dashboard-button">Visualizar Avaliações</a>
-            <a href="relatorios.php" class="dashboard-button">Relatórios e Estatísticas</a>
+            <a href="relatorios_estatisticas.php" class="dashboard-button">Relatórios e Estatísticas</a>
         </div>
     </div>
 </body>

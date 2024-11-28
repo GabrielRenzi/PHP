@@ -2,21 +2,18 @@
 session_start();
 include 'conexao.php';
 
-// Função para obter dispositivos
 function getDispositivos($conexao) {
     $query = "SELECT * FROM dispositivo WHERE status = 'ativo'";
     $result = pg_query($conexao, $query);
     return pg_fetch_all($result);
 }
 
-// Obtendo dispositivos ativos
 $dispositivos = getDispositivos($conexao);
 
-// Salvando o dispositivo selecionado na sessão
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['dispositivo_id'])) {
         $_SESSION['dispositivo_id'] = $_POST['dispositivo_id'];
-        header("Location: avaliacao.php?index=0"); // Redireciona para a primeira pergunta
+        header("Location: avaliacao.php?index=0");
         exit();
     } else {
         echo "Erro: Nenhum dispositivo selecionado.";

@@ -59,14 +59,12 @@ button:hover {
     background-color: rgb(6, 255, 15);
 }
 
-/* Estilos para a coluna de ações */
 .action-buttons {
     display: flex;
     gap: 5px;
 }
 
-/* Botão de exclusão */
-.delete-button {
+.edit-button {
     background-color: #dc3545;
     color: white;
     border: none;

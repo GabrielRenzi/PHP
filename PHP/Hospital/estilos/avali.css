@@ -33,7 +33,7 @@ align-items: center;
 
 .pergunta-texto {
 font-weight: bold;
-font-size: 1.5rem; /* Aumenta o tamanho da fonte */
+font-size: 1.5rem; 
 color: #333;
 margin-bottom: 20px;
 text-align: center;
@@ -61,18 +61,16 @@ margin-top: 10px;
     border: 2px solid transparent;
 }
 
-/* Destacar o item selecionado */
 .escala-item.selected {
-    border: 2px solid #000; /* Borda destacada para o item selecionado */
-    background-color: #FFD700; /* Cor de fundo dourada para o item selecionado */
-    color: #000; /* Cor do texto quando o item está selecionado */
+    border: 2px solid #000;
+    background-color: #FFD700; 
+    color: #000;
 }
 
 .escala-item:hover {
     transform: scale(1.1);
 }
 
-/* Ocultar o radio, mas manter o número visível */
 .escala-item input[type="radio"] {
     display: none;
 }
@@ -141,4 +139,15 @@ background-color: #388E3C;
 .btn-proxima:hover,
 .btn-enviar:hover {
 background-color: #45A049;
+}
+
+.imagem-container {
+    text-align: center;
+    margin: 20px 0; 
+}
+
+.imagem-avaliacao {
+    max-width: 120px;
+    height: auto;
+    border-radius: 10px;
 }

@@ -1,8 +1,7 @@
 <?php
 session_start();
-include 'conexao.php'; // Certifique-se de que esse arquivo conecta ao banco de dados
+include 'conexao.php';
 
-// Consulta para buscar todas as avaliações, agrupadas por pergunta
 $query = "SELECT 
             pergunta.texto_pergunta, 
             avaliacao.resposta, 
@@ -38,10 +37,9 @@ $avaliacoes = pg_fetch_all($result);
             <?php
             $currentQuestion = '';
             foreach ($avaliacoes as $avaliacao): 
-                // Verifica se a pergunta mudou para agrupar as respostas
                 if ($currentQuestion !== $avaliacao['texto_pergunta']) {
                     if ($currentQuestion !== '') {
-                        echo "</div>"; // Fecha o grupo de respostas da pergunta anterior
+                        echo "</div>";
                     }
                     $currentQuestion = $avaliacao['texto_pergunta'];
                     echo "<div class='pergunta-group'>";
@@ -54,7 +52,7 @@ $avaliacoes = pg_fetch_all($result);
                     <p><strong>Data e Hora:</strong> <?php echo $avaliacao['data_hora_avaliacao']; ?></p>
                 </div>
             <?php endforeach; ?>
-            </div> <!-- Fecha o último grupo de perguntas -->
+            </div>
         <?php else: ?>
             <p>Nenhuma avaliação encontrada.</p>
         <?php endif; ?>

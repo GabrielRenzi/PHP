@@ -29,3 +29,10 @@ CREATE TABLE usuario_administrativo (
     login VARCHAR(50) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL
 );
+
+CREATE TABLE setor (
+    setor_id SERIAL PRIMARY KEY,      
+    nome_setor VARCHAR(100) NOT NULL,
+    descricao TEXT,               
+    data_criacao TIMESTAMP DEFAULT NOW()
+);

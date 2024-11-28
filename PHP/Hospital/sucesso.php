@@ -6,9 +6,8 @@
     <title>Agradecimento</title>
     <link rel="stylesheet" href="estilos/sucesso.css">
     <script>
-        // Redireciona após 5 segundos
         setTimeout(function() {
-            window.location.href = 'avaliacao.php?index=0'; // Ajuste o link para a página das perguntas
+            window.location.href = 'avaliacao.php?index=0';
         }, 5000);
     </script>
 </head>
